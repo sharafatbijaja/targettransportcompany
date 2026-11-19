@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" width="900" height="450">
+  <defs>
+    <!-- Riyadh Sunset Sky -->
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E3C72"/>
+      <stop offset="55%" stop-color="#F2994A"/>
+      <stop offset="100%" stop-color="#F2C94C"/>
+    </linearGradient>
+
+    <!-- Desert Sand -->
+    <linearGradient id="sandGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E6B87D"/>
+      <stop offset="100%" stop-color="#C88D4B"/>
+    </linearGradient>
+
+    <!-- Exact Pearl White Coaster Body Shading -->
+    <linearGradient id="coasterBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E5E7EB"/>
+      <stop offset="8%" stop-color="#FFFFFF"/>
+      <stop offset="76%" stop-color="#F8FAFC"/>
+      <stop offset="92%" stop-color="#E2E8F0"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+
+    <!-- Smoked Tinted Window Glass -->
+    <linearGradient id="windowGlass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4B5563"/>
+      <stop offset="45%" stop-color="#27272A"/>
+      <stop offset="48%" stop-color="#18181B"/>
+      <stop offset="100%" stop-color="#09090B"/>
+    </linearGradient>
+
+    <!-- Driver Window Lighter Tint -->
+    <linearGradient id="driverGlass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#71717A"/>
+      <stop offset="50%" stop-color="#3F3F46"/>
+      <stop offset="100%" stop-color="#18181B"/>
+    </linearGradient>
+
+    <!-- Front Steel Rim (Outward Dish) -->
+    <g id="frontWheel">
+      <circle cx="0" cy="0" r="26" fill="#18181B"/>
+      <circle cx="0" cy="0" r="22.5" fill="none" stroke="#27272A" stroke-width="2"/>
+      <circle cx="0" cy="0" r="14.5" fill="#D1D5DB" stroke="#6B7280" stroke-width="1.2"/>
+      <circle cx="0" cy="-9.5" r="2" fill="#1F2937"/>
+      <circle cx="8.2" cy="-4.7" r="2" fill="#1F2937"/>
+      <circle cx="8.2" cy="4.7" r="2" fill="#1F2937"/>
+      <circle cx="0" cy="9.5" r="2" fill="#1F2937"/>
+      <circle cx="-8.2" cy="4.7" r="2" fill="#1F2937"/>
+      <circle cx="-8.2" cy="-4.7" r="2" fill="#1F2937"/>
+      <circle cx="0" cy="0" r="6" fill="#9CA3AF" stroke="#4B5563" stroke-width="1"/>
+      <circle cx="0" cy="0" r="2.8" fill="#374151"/>
+      <animateTransform class="motion" attributeName="transform" type="rotate" from="360 0 0" to="0 0 0" dur="0.5s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Rear Deep-Dish Dual Steel Rim -->
+    <g id="rearWheel">
+      <circle cx="0" cy="0" r="26" fill="#18181B"/>
+      <circle cx="0" cy="0" r="22.5" fill="none" stroke="#27272A" stroke-width="2"/>
+      <circle cx="0" cy="0" r="14.5" fill="#9CA3AF" stroke="#4B5563" stroke-width="1.2"/>
+      <circle cx="0" cy="0" r="11" fill="#D1D5DB"/>
+      <circle cx="0" cy="-7.8" r="1.8" fill="#1F2937"/>
+      <circle cx="6.7" cy="-3.9" r="1.8" fill="#1F2937"/>
+      <circle cx="6.7" cy="3.9" r="1.8" fill="#1F2937"/>
+      <circle cx="0" cy="7.8" r="1.8" fill="#1F2937"/>
+      <circle cx="-6.7" cy="3.9" r="1.8" fill="#1F2937"/>
+      <circle cx="-6.7" cy="-3.9" r="1.8" fill="#1F2937"/>
+      <circle cx="0" cy="0" r="4.5" fill="#374151"/>
+      <circle cx="0" cy="0" r="2" fill="#9CA3AF"/>
+      <animateTransform class="motion" attributeName="transform" type="rotate" from="360 0 0" to="0 0 0" dur="0.5s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Palm Tree -->
+    <g id="palmTree">
+      <path d="M-4,0 Q-2,-45 2,-90 L8,-90 Q4,-45 6,0 Z" fill="#6D4C41"/>
+      <path d="M5,-88 Q-25,-105 -45,-80 Q-20,-90 5,-85 Z" fill="#2E7D32"/>
+      <path d="M5,-88 Q-15,-120 -35,-105 Q-10,-105 5,-85 Z" fill="#388E3C"/>
+      <path d="M5,-88 Q35,-105 55,-80 Q30,-90 5,-85 Z" fill="#2E7D32"/>
+      <path d="M5,-88 Q25,-120 45,-105 Q20,-105 5,-85 Z" fill="#388E3C"/>
+      <path d="M5,-88 Q5,-125 0,-115 Q2,-100 5,-85 Z" fill="#43A047"/>
+    </g>
+  </defs>
+  <style>
+    @media (prefers-reduced-motion: reduce) {
+      .motion { display: none; }
+    }
+  </style>
+
+  <!-- 1. Sky & Sun -->
+  <rect width="900" height="310" fill="url(#skyGrad)"/>
+  <circle cx="180" cy="105" r="42" fill="#FFF3B0" opacity="0.85"/>
+
+  <!-- 2. Riyadh Skyline -->
+  <g>
+    <animateTransform class="motion" attributeName="transform" type="translate" from="-900 0" to="0 0" dur="24s" repeatCount="indefinite"/>
+    <g id="riyadhSkyline">
+      <rect x="80" y="190" width="45" height="120" fill="#5D6D7E" opacity="0.6"/>
+      <rect x="140" y="160" width="55" height="150" fill="#4A5568" opacity="0.7"/>
+      <polygon points="220,310 245,120 270,310" fill="#3B4856" opacity="0.8"/>
+      <circle cx="245" cy="155" r="8" fill="#F2C94C"/>
+      <g transform="translate(450, 65)">
+        <path d="M0,245 L18,0 L62,0 L80,245 Z" fill="#4A607A"/>
+        <path d="M26,18 Q40,85 54,18 Z" fill="url(#skyGrad)"/>
+        <rect x="20" y="12" width="40" height="5" fill="#D6EAF8"/>
+      </g>
+      <rect x="590" y="175" width="45" height="135" fill="#5D6D7E" opacity="0.65"/>
+      <rect x="655" y="140" width="55" height="170" fill="#34495E" opacity="0.75"/>
+      <rect x="740" y="195" width="60" height="115" fill="#5D6D7E" opacity="0.6"/>
+    </g>
+    <use href="#riyadhSkyline" x="900"/>
+  </g>
+
+  <!-- 3. Desert Sand -->
+  <rect x="0" y="300" width="900" height="45" fill="url(#sandGrad)"/>
+
+  <!-- 4. Moving Palm Trees -->
+  <g>
+    <animateTransform class="motion" attributeName="transform" type="translate" from="-900 0" to="0 0" dur="5.5s" repeatCount="indefinite"/>
+    <use href="#palmTree" x="150" y="325"/>
+    <use href="#palmTree" x="450" y="325"/>
+    <use href="#palmTree" x="750" y="325"/>
+    <use href="#palmTree" x="1050" y="325"/>
+    <use href="#palmTree" x="1350" y="325"/>
+    <use href="#palmTree" x="1650" y="325"/>
+  </g>
+
+  <!-- 5. Riyadh Highway -->
+  <rect x="0" y="325" width="900" height="125" fill="#26292C"/>
+  <line x1="0" y1="332" x2="900" y2="332" stroke="#F1C40F" stroke-width="3"/>
+  <line x1="0" y1="435" x2="900" y2="435" stroke="#ECF0F1" stroke-width="4"/>
+  <line x1="-160" y1="382" x2="1060" y2="382" stroke="#FFFFFF" stroke-width="5" stroke-dasharray="45 35">
+    <animateTransform class="motion" attributeName="transform" type="translate" from="0 0" to="160 0" dur="0.45s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- 6. Exact Toyota Coaster 2026 -->
+  <g transform="translate(180, 185)">
+    <animateTransform class="motion" attributeName="transform" type="translate" values="180,185; 180,183.5; 180,185" dur="0.32s" repeatCount="indefinite"/>
+
+    <!-- Ground Shadow -->
+    <ellipse cx="270" cy="175" rx="262" ry="10" fill="#090A0B" opacity="0.65"/>
+
+    <!-- Inner Tires -->
+    <circle cx="385" cy="150" r="25" fill="#111111"/>
+    <circle cx="95" cy="150" r="25" fill="#111111"/>
+
+    <!-- Main Coaster Body -->
+    <path d="M52,18 L515,18 Q530,18 532,35 L536,138 Q536,154 522,156 L428,158 A32,32 0 0,0 364,158 L114,158 A32,32 0 0,0 50,158 L14,156 Q4,154 4,142 L8,112 Q18,68 38,32 Q44,18 52,18 Z" fill="url(#coasterBody)" stroke="#9CA3AF" stroke-width="1.2"/>
+
+    <!-- Blackout Driver Window & Beltline -->
+    <path d="M44,34 L108,34 L108,92 Q62,115 16,118 Q24,72 44,34 Z" fill="#18181B"/>
+    <path d="M46,48 L101,48 L101,88 Q62,107 24,111 Q32,74 46,48 Z" fill="url(#driverGlass)"/>
+    <line x1="63" y1="48" x2="55" y2="105" stroke="#18181B" stroke-width="3.5"/>
+    <line x1="36" y1="74" x2="101" y2="74" stroke="#18181B" stroke-width="2.5"/>
+    <ellipse cx="42" cy="88" rx="7" ry="3" transform="rotate(-25 42 88)" fill="#09090B"/>
+
+    <!-- Driver Door Seam & Handle -->
+    <path d="M108,34 L108,115 L98,145" fill="none" stroke="#9CA3AF" stroke-width="1"/>
+    <rect x="82" y="108" width="14" height="5" rx="2.5" fill="#1F2937"/>
+
+    <!-- Panoramic Side Window Band -->
+    <rect x="112" y="34" width="408" height="58" rx="3" fill="#18181B"/>
+
+    <!-- Window Bay 1 -->
+    <rect x="116" y="38" width="110" height="50" rx="2" fill="url(#windowGlass)"/>
+    <rect x="135" y="64" width="11" height="24" rx="4" fill="#3F3F46" opacity="0.6"/>
+    <rect x="172" y="62" width="12" height="26" rx="4" fill="#52525B" opacity="0.6"/>
+    <rect x="206" y="62" width="12" height="26" rx="4" fill="#52525B" opacity="0.6"/>
+    <rect x="170" y="38" width="2.5" height="50" fill="#18181B"/>
+
+    <!-- Window Bay 2 -->
+    <rect x="232" y="38" width="110" height="50" rx="2" fill="url(#windowGlass)"/>
+    <rect x="242" y="64" width="11" height="24" rx="4" fill="#3F3F46" opacity="0.55"/>
+    <rect x="292" y="64" width="11" height="24" rx="4" fill="#3F3F46" opacity="0.55"/>
+    <rect x="286" y="38" width="2.5" height="50" fill="#18181B"/>
+
+    <!-- Window Bay 3 -->
+    <rect x="348" y="38" width="110" height="50" rx="2" fill="url(#windowGlass)"/>
+    <rect x="358" y="64" width="11" height="24" rx="4" fill="#3F3F46" opacity="0.55"/>
+    <rect x="394" y="64" width="11" height="24" rx="4" fill="#3F3F46" opacity="0.55"/>
+    <rect x="402" y="38" width="2.5" height="50" fill="#18181B"/>
+
+    <!-- Window Bay 4 (Rear Quarter Window) -->
+    <rect x="464" y="38" width="50" height="50" rx="2" fill="url(#windowGlass)"/>
+    <rect x="478" y="64" width="11" height="24" rx="4" fill="#3F3F46" opacity="0.55"/>
+
+    <!-- Side Body Crease Lines -->
+    <line x1="12" y1="126" x2="534" y2="126" stroke="#CBD5E1" stroke-width="1.5"/>
+    <line x1="12" y1="133" x2="534" y2="133" stroke="#E2E8F0" stroke-width="1"/>
+
+    <!-- Lower AC Condenser Louver Grille -->
+    <rect x="165" y="136" width="58" height="16" rx="2" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1"/>
+    <line x1="169" y1="140" x2="219" y2="140" stroke="#374151" stroke-width="1.5"/>
+    <line x1="169" y1="144" x2="219" y2="144" stroke="#374151" stroke-width="1.5"/>
+    <line x1="169" y1="148" x2="219" y2="148" stroke="#374151" stroke-width="1.5"/>
+
+    <!-- Rear Upper Louver Vent & Fuel Filler Door -->
+    <rect x="475" y="106" width="24" height="10" rx="2" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+    <rect x="434" y="122" width="14" height="11" rx="2" fill="none" stroke="#9CA3AF" stroke-width="1"/>
+
+    <!-- Amber Side Marker Lights -->
+    <rect x="122" y="144" width="6" height="4" rx="1" fill="#D97706"/>
+    <rect x="506" y="144" width="6" height="4" rx="1" fill="#D97706"/>
+
+    <!-- Front and rear lights, trim and bumpers -->
+    <path d="M10,113 L28,116 L26,130 L8,130 Z" fill="#F8FAFC" stroke="#9CA3AF" stroke-width="1"/>
+    <rect x="10" y="116" width="5" height="8" rx="1" fill="#F59E0B"/>
+    <rect x="18" y="117" width="8" height="10" rx="2" fill="#FEF08A"/>
+    <rect x="526" y="91" width="6" height="28" rx="1" fill="#DC2626"/>
+    <rect x="526" y="100" width="6" height="7" fill="#F59E0B"/>
+    <path d="M4,140 L34,143 L32,153 L8,152 Z" fill="#F8FAFC" stroke="#9CA3AF" stroke-width="1"/>
+    <path d="M522,140 L538,137 L538,151 L520,153 Z" fill="#F8FAFC" stroke="#9CA3AF" stroke-width="1"/>
+    <path d="M32,48 L13,43 L8,49 L8,65 L20,64 L24,52 L34,53 Z" fill="#1E293B"/>
+
+    <use href="#frontWheel" x="82" y="150"/>
+    <use href="#rearWheel" x="396" y="150"/>
+  </g>
+</svg>
