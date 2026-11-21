@@ -15,6 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: copy.home.title,
     description: copy.home.description,
+    keywords: copy.home.keywords,
     alternates: {
       canonical: path,
       languages: { en: "/en", ar: "/ar", "x-default": "/en" },
@@ -41,10 +42,55 @@ export default async function Page({ params }: Props) {
   const copy = getCopy(locale);
   const organization = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "LocalBusiness",
     name: copy.ui.brand,
     ...(siteUrl ? { url: siteUrl } : {}),
     description: copy.home.description,
+    areaServed: [
+      "Riyadh", "Dammam", "Jeddah", "Makkah", "Madinah",
+      "Taif", "Tabuk", "Hafar Al Batin", "Abha",
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Bus and Toyota Coaster rental",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          name: "Higer Bus 51-Seater",
+          price: "17000",
+          priceCurrency: "SAR",
+          unitText: "MONTH",
+          description: "51 seats, professional company driver included, fuel included, VAT excluded.",
+        },
+        {
+          "@type": "Offer",
+          name: "Toyota Coaster 22-Seater",
+          price: "15000",
+          priceCurrency: "SAR",
+          unitText: "MONTH",
+          description: "22 seats, professional company driver included, fuel included, VAT excluded.",
+        },
+        {
+          "@type": "Offer",
+          name: "Toyota Coaster 22-Seater",
+          price: "700",
+          priceCurrency: "SAR",
+          unitText: "DAY",
+          description: "22 seats, professional company driver included, fuel included, VAT excluded.",
+        },
+      ],
+    },
+  };
+  const transportServiceSchema = {
+    "@context": "https://schema.org",
+    "@type": "TransportService",
+    name: copy.ui.brand,
+    ...(siteUrl ? { url: siteUrl } : {}),
+    description: copy.home.description,
+    areaServed: [
+      "Riyadh", "Dammam", "Jeddah", "Makkah", "Madinah",
+      "Taif", "Tabuk", "Hafar Al Batin", "Abha",
+    ],
   };
   const faqSchema = {
     "@context": "https://schema.org",
@@ -59,6 +105,7 @@ export default async function Page({ params }: Props) {
   return (
     <>
       <JsonLd data={organization} />
+      <JsonLd data={transportServiceSchema} />
       <JsonLd data={faqSchema} />
       <HomePage locale={locale} />
     </>

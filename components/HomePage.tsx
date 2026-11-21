@@ -9,7 +9,7 @@ function RouteArtwork({ locale }: { locale: Locale }) {
     <div className="route-artwork">
       <Image
         src="/images/saudi-routes-hero.svg"
-        alt={locale === "ar" ? "خريطة طرق النقل في السعودية من الرياض" : "Saudi Arabia transport routes from Riyadh"}
+        alt={locale === "ar" ? "أسطول شركة تارجت للنقل الحديث من حافلات هايجر وتويوتا كوستر في الرياض السعودية" : "Target Transport Company modern fleet of Toyota Coaster and Higer buses in Riyadh Saudi Arabia"}
         width={900}
         height={586}
         sizes="(max-width: 840px) calc(100vw - 36px), 55vw"
@@ -44,7 +44,7 @@ export function HomePage({ locale }: { locale: Locale }) {
             </div>
             <div className="hero-note">
               <span className="note-dot animate-ping" />
-              <span>{locale === "ar" ? "يتم تأكيد تفاصيل الرحلة قبل الحجز" : "Trip details are confirmed before booking"}</span>
+              <span>{locale === "ar" ? "يتم تأكيد تفاصيل الرحلة وتوفر المركبات قبل الحجز" : "Trip details and fleet availability are confirmed before booking"}</span>
             </div>
           </div>
           <RouteArtwork locale={locale} />
@@ -54,7 +54,7 @@ export function HomePage({ locale }: { locale: Locale }) {
       <section className="content-section services-section" id="services" aria-labelledby="services-heading">
         <div className="container">
           <div className="section-heading">
-            <div><span className="section-eyebrow">{copy.ui.nav.services}</span><h2 id="services-heading">{home.servicesTitle}</h2></div>
+            <div><span className="section-eyebrow">{locale === "ar" ? "خدمات النقل والأساطيل" : "Our Fleet Services"}</span><h2 id="services-heading">{home.servicesTitle}</h2></div>
             <p>{home.servicesIntro}</p>
           </div>
           <div className="card-grid service-card-grid">
@@ -115,8 +115,8 @@ export function HomePage({ locale }: { locale: Locale }) {
           </div>
           <div className="section-heading vehicle-section-heading">
             <div>
-              <span className="section-eyebrow">{copy.ui.nav.fleet}</span>
-              <h3 id="fleet-heading">{locale === "ar" ? "خيارات مركبات تناسب احتياجاتك" : "Vehicle options for every need"}</h3>
+              <span className="section-eyebrow">{locale === "ar" ? "الأسطول" : "Our Fleet"}</span>
+              <h3 id="fleet-heading">{locale === "ar" ? "خيارات حافلات وكوستر تناسب احتياجاتك" : "Bus & Coaster options for every need"}</h3>
             </div>
           </div>
           <div className="vehicle-pricing-grid">
@@ -124,12 +124,12 @@ export function HomePage({ locale }: { locale: Locale }) {
               <Image
                 className="vehicle-pricing-image"
                 src="/images/higer-bus-51seats.webp"
-                alt={locale === "ar" ? "حافلة هايجر" : "Higer bus"}
+                alt={locale === "ar" ? "حافلة هايجر 51 مقعد للإيجار الشهري للشركات والمشاريع في الرياض مع سائق" : "51-seater Higer bus for monthly corporate and project rental in Riyadh with driver"}
                 width={1640}
                 height={640}
                 sizes="(max-width: 840px) calc(100vw - 80px), 520px"
               />
-              <h3 className="vehicle-pricing-title">{locale === "ar" ? "حافلة" : "Bus (Higer)"}</h3>
+              <h3 className="vehicle-pricing-title">{locale === "ar" ? "حافلة هايجر (51 راكب)" : "Higer Bus (51-Seater)"}</h3>
               <div className="vehicle-price">
                 <CalendarDays size={18} aria-hidden="true" />
                 <strong>17,000</strong>
@@ -137,9 +137,9 @@ export function HomePage({ locale }: { locale: Locale }) {
               </div>
               <ul className="vehicle-inclusions">
                 <li><UsersRound size={18} aria-hidden="true" />{locale === "ar" ? "51 مقعدًا" : "51 seats"}</li>
-                <li><Snowflake size={18} aria-hidden="true" />{locale === "ar" ? "مكيّف هواء" : "Air conditioning"}</li>
+                <li><Snowflake size={18} aria-hidden="true" />{locale === "ar" ? "مكيّف هواء مركزي" : "Heavy-duty Air conditioning"}</li>
                 <li><Thermometer size={18} aria-hidden="true" />{locale === "ar" ? "مدفأة" : "Heater"}</li>
-                <li><UsersRound size={18} aria-hidden="true" />{locale === "ar" ? "مع سائق من الشركة فقط — لا تتوفر خدمة القيادة الذاتية" : "Company driver included — no self-drive service"}</li>
+                <li><UsersRound size={18} aria-hidden="true" />{locale === "ar" ? "مع سائق محترف من الشركة — لا تتوفر القيادة الذاتية" : "Professional company driver included — no self-drive"}</li>
                 <li><Fuel size={18} aria-hidden="true" />{locale === "ar" ? "الوقود مشمول" : "Fuel included"}</li>
               </ul>
             </article>
@@ -147,12 +147,12 @@ export function HomePage({ locale }: { locale: Locale }) {
               <Image
                 className="vehicle-pricing-image"
                 src="/images/toyota-coaster-2026.webp"
-                alt={locale === "ar" ? "تويوتا كوستر" : "Toyota Coaster"}
+                alt={locale === "ar" ? "باص تويوتا كوستر 22 مقعد للإيجار اليومي والشهري في المملكة العربية السعودية" : "22-seater Toyota Coaster minibus for daily and monthly lease in Saudi Arabia"}
                 width={1640}
                 height={640}
                 sizes="(max-width: 840px) calc(100vw - 80px), 520px"
               />
-              <h3 className="vehicle-pricing-title">{locale === "ar" ? "كوستر" : "Coaster"}</h3>
+              <h3 className="vehicle-pricing-title">{locale === "ar" ? "تويوتا كوستر (22 راكب)" : "Toyota Coaster (22-Seater)"}</h3>
               <div className="vehicle-price-options">
                 <div className="vehicle-price">
                   <CalendarDays size={18} aria-hidden="true" />
@@ -167,16 +167,16 @@ export function HomePage({ locale }: { locale: Locale }) {
               </div>
               <ul className="vehicle-inclusions">
                 <li><UsersRound size={18} aria-hidden="true" />{locale === "ar" ? "22 مقعدًا" : "22 seats"}</li>
-                <li><Snowflake size={18} aria-hidden="true" />{locale === "ar" ? "مكيّف هواء" : "Air conditioning"}</li>
+                <li><Snowflake size={18} aria-hidden="true" />{locale === "ar" ? "مكيّف هواء قوي" : "Dual Air conditioning"}</li>
                 <li><Thermometer size={18} aria-hidden="true" />{locale === "ar" ? "مدفأة" : "Heater"}</li>
-                <li><UsersRound size={18} aria-hidden="true" />{locale === "ar" ? "مع سائق من الشركة فقط — لا تتوفر خدمة القيادة الذاتية" : "Company driver included — no self-drive service"}</li>
+                <li><UsersRound size={18} aria-hidden="true" />{locale === "ar" ? "مع سائق محترف من الشركة — لا تتوفر القيادة الذاتية" : "Professional company driver included — no self-drive"}</li>
                 <li><Fuel size={18} aria-hidden="true" />{locale === "ar" ? "الوقود مشمول" : "Fuel included"}</li>
               </ul>
             </article>
           </div>
           <p className="vehicle-tax-note">
             <BadgeCheck size={19} aria-hidden="true" />
-            <span>{locale === "ar" ? "الأسعار الموضحة لا تشمل الضريبة." : "Tax excluded from all listed prices."}</span>
+            <span>{locale === "ar" ? "الأسعار الموضحة لا تشمل ضريبة القيمة المضافة." : "VAT (Tax) is excluded from all listed prices."}</span>
           </p>
           <div className="vehicle-booking-cta">
             <Link className="button button-primary" href={bookUrl}>
@@ -216,7 +216,7 @@ export function HomePage({ locale }: { locale: Locale }) {
 
       <section className="closing-section">
         <div className="container closing-inner">
-          <div><span className="section-eyebrow">{copy.ui.nav.booking}</span><h2>{home.closingTitle}</h2><p>{home.closingText}</p></div>
+          <div><span className="section-eyebrow">{locale === "ar" ? "الحجز والعروض" : "Booking & offers"}</span><h2>{home.closingTitle}</h2><p>{home.closingText}</p></div>
           <Link className="button button-light" href={bookUrl}>{home.primaryAction}<ArrowUpRight size={17} aria-hidden="true" /></Link>
         </div>
       </section>
