@@ -991,6 +991,7 @@ html[data-theme="dark"] .closing-section,
 }
 
 .page-intro {
+  position: relative;
   padding-block: 40px 60px;
   background:
     radial-gradient(ellipse at 85% 12%, rgb(41 111 226 / 8%), transparent 35%),
@@ -998,6 +999,9 @@ html[data-theme="dark"] .closing-section,
 }
 
 .page-intro .breadcrumbs {
+  position: absolute;
+  inset-block-start: 4px;
+  inset-inline-end: max(24px, calc((100% - 1160px) / 2));
   margin-bottom: 40px;
 }
 
@@ -1655,6 +1659,7 @@ html[data-theme="dark"] .service-card-grid .text-link:hover {
   }
 
   .page-intro .breadcrumbs {
+    inset-inline-end: 18px;
     margin-bottom: 37px;
   }
 
