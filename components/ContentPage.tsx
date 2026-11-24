@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { ArrowUpRight, ChevronDown, Handshake } from "lucide-react";
+=======
+import { ArrowUpRight, ChevronDown, Handshake, Mail, Phone } from "lucide-react";
+>>>>>>> temp-fix
 import Image from "next/image";
 import { IconCard } from "@/components/IconCard";
 import { InquiryForm } from "@/components/InquiryForm";
@@ -41,7 +45,63 @@ export function ContentPage({
             </div>
             {!!section.cards?.length && (
               <div className="card-grid">
-                {section.cards.map((card) => (
+                {section.cards.map((card) => card.phoneContacts ? (
+                  <article className="info-card contact-phone-card" key={card.title}>
+                    <span className="card-icon" aria-hidden="true"><Phone size={21} /></span>
+                    <h3>{card.title}</h3>
+                    {card.description && <p>{card.description}</p>}
+                    <div className="contact-phone-list">
+                      {card.phoneContacts.map((contact) => {
+                        const internationalNumber = `+966${contact.number.slice(1)}`;
+                        const whatsappNumber = internationalNumber.slice(1);
+                        const message = locale === "ar"
+                          ? "مرحباً، وصلت إليكم من موقع شركة تارجت ترانسبورت ولدي استفسار."
+                          : "Hello, I came from the Target Transport website and have an enquiry.";
+
+                        return (
+                          <div className="contact-phone-entry" key={contact.number}>
+                            <div className="contact-phone-heading">
+                              <strong>{contact.label}</strong>
+                              <a className="contact-phone-number" href={`tel:${internationalNumber}`} dir="ltr">
+                                {contact.number}
+                              </a>
+                            </div>
+                            <div className="contact-phone-actions" dir="ltr">
+                              <a
+                                className="contact-action-button"
+                                href={`tel:${internationalNumber}`}
+                                aria-label={locale === "ar"
+                                  ? `اتصل بـ${contact.label} على ${contact.number}`
+                                  : `Call ${contact.label} at ${contact.number}`}
+                              >
+                                {locale === "ar" ? "اتصل" : "Call"}
+                              </a>
+                              <a
+                                className="contact-action-button whatsapp-action"
+                                href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={locale === "ar"
+                                  ? `راسل ${contact.label} عبر واتساب على ${contact.number}`
+                                  : `WhatsApp ${contact.label} at ${contact.number}`}
+                              >
+                                WhatsApp
+                              </a>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </article>
+                ) : card.email ? (
+                  <article className="info-card contact-email-card" key={card.title}>
+                    <span className="card-icon" aria-hidden="true"><Mail size={21} /></span>
+                    <h3>{card.title}</h3>
+                    <a className="contact-email-link" href={`mailto:${card.email}`} dir="ltr">
+                      {card.email}
+                    </a>
+                  </article>
+                ) : (
                   <IconCard key={card.title} {...card} />
                 ))}
               </div>
@@ -89,7 +149,7 @@ export function ContentPage({
           </div>
         </section>
       )}
-      {page.action && (
+      {pageKey === "booking" && page.action && (
         <section className={`content-section section-muted${pageKey === "booking" ? " booking-form-section" : ""}`}>
           <div className="container form-container">
             <InquiryForm locale={locale} kind={page.action} />
@@ -118,6 +178,21 @@ export function ContentPage({
                 referrerPolicy="strict-origin-when-cross-origin"
                 title="Target Transport Company Location - Al Jaffal Commercial Center, Riyadh"
               ></iframe>
+            </div>
+          </div>
+        </section>
+      )}
+      {pageKey === "contact" && page.cta && (
+        <section className="content-section contact-booking-cta-section">
+          <div className="container">
+            <div className="contact-booking-cta" dir={locale === "ar" ? "rtl" : "ltr"}>
+              <div>
+                <h2>{page.cta.title}</h2>
+                <p>{page.cta.description}</p>
+              </div>
+              <Link className="button button-primary" href={`/${locale}/booking`}>
+                {page.cta.label}<ArrowUpRight size={16} aria-hidden="true" />
+              </Link>
             </div>
           </div>
         </section>

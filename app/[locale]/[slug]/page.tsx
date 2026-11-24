@@ -278,7 +278,7 @@ async function PageContent({ params }: Props) {
         "@id": siteUrl ? `${siteUrl}/#location` : "https://targettransportcompany.sa/#location",
         name: "Target Transport Company",
         telephone: "+966540328480",
-        email: "info@targettransportcompany.sa",
+        email: "targettransportcompanyksa@gmail.com",
         address: {
           "@type": "PostalAddress",
           streetAddress: "Office No. 74, Al-Jaffal Commercial Center, King Fahad Branch Road, Utaiqah",
@@ -304,7 +304,7 @@ async function PageContent({ params }: Props) {
       name: "Target Transport Company",
       url: siteUrl ?? "https://targettransportcompany.sa",
       telephone: "+966540328480",
-      email: "info@targettransportcompany.sa",
+      email: "targettransportcompanyksa@gmail.com",
       address: {
         "@type": "PostalAddress",
         streetAddress: "Office No. 74, Al-Jaffal Commercial Center, King Fahad Branch Road, Utaiqah",

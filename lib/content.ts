@@ -19,7 +19,13 @@ export function isPageKey(value: string): value is PageKey {
   return pageKeys.some((pageKey) => pageKey === value);
 }
 
-type Card = { title: string; description: string; icon: string };
+type Card = {
+  title: string;
+  description: string;
+  icon: string;
+  phoneContacts?: { label: string; number: string }[];
+  email?: string;
+};
 type Section = {
   title: string;
   description?: string;
@@ -356,18 +362,41 @@ const en: Copy = {
     },
     contact: {
       title: "Contact Target Transport Company Riyadh | Book Toyota Coaster & Higer Bus",
+<<<<<<< HEAD
       description: "Request a bus or Toyota Coaster quote in Riyadh & across KSA. Visit our office at Al-Jaffal Commercial Center in Utaiqah, Riyadh, or submit your route details online.",
+=======
+      description: "Contact Target Transport Company in Riyadh by phone or WhatsApp, or visit our office at Al-Jaffal Commercial Center in Utaiqah.",
+>>>>>>> temp-fix
       eyebrow: "Contact",
       heading: "Tell us how we can help.",
-      intro: "Submit your pickup route, destination, date, and passenger count. Our Riyadh dispatch team will help arrange a Toyota Coaster or Higer bus across KSA.",
+      intro: "Our Riyadh team can help arrange a Toyota Coaster or Higer bus across KSA.",
       action: "contact",
       sections: [
         { title: "Contact details", description: "Reach Target Transport Company in Riyadh.", cards: [
+<<<<<<< HEAD
           { title: "Phone", description: "0540328480\n0564927110 (placeholder)\n0504828229 (placeholder)", icon: "phone" },
           { title: "Email", description: "targettransportcompanyksa@gmail.com", icon: "mail" },
+=======
+          {
+            title: "Phone & WhatsApp",
+            description: "",
+            icon: "phone",
+            phoneContacts: [
+              { label: "CEO", number: "0540328480" },
+              { label: "Company Contact", number: "0564927110" },
+              { label: "Website & Marketing Enquiries", number: "0504828229" },
+            ],
+          },
+          { title: "Email", description: "", email: "targettransportcompanyksa@gmail.com", icon: "mail" },
+>>>>>>> temp-fix
           { title: "Office location", description: "Target Transport Company, Office No. 74, Al-Jaffal Commercial Center, King Fahad Branch Rd, Utaiqah, Riyadh, Saudi Arabia", icon: "map-pin" },
         ] },
       ],
+      cta: {
+        title: "Ready to book your trip?",
+        description: "Share your pickup, destination, travel date and passenger count.",
+        label: "Go to booking form",
+      },
     },
   },
 };
@@ -606,19 +635,45 @@ const ar: Copy = {
       },
     },
     contact: {
+<<<<<<< HEAD
       title: "تواصل مع شركة تارغت ترانسبورت بالرياض | احجز تويوتا كوستر وحافلات هايجر",
       description: "اطلب عرض سعر لتأجير الحافلات وتويوتا كوستر في الرياض وجميع مناطق المملكة. تفضل بزيارة مكتبنا في مركز الجفال التجاري بحي عتيقة بالرياض أو أرسل تفاصيل رحلتك.",
+=======
+      title: "تواصل مع شركة تارجت للنقل بالرياض | احجز تويوتا كوستر وحافلات هايجر",
+      description: "تواصل مع شركة تارجت ترانسبورت في الرياض عبر الهاتف أو واتساب، أو تفضل بزيارة مكتبنا في مركز الجفال التجاري بحي عتيقة.",
+>>>>>>> temp-fix
       eyebrow: "اتصل بنا",
       heading: "أخبرنا كيف يمكننا مساعدتك.",
-      intro: "أرسل بيانات الانطلاق والوجهة والتاريخ وعدد الركاب. يساعدك فريق التشغيل في الرياض على ترتيب تويوتا كوستر أو حافلة هايجر في جميع مناطق المملكة.",
+      intro: "يساعدك فريقنا في الرياض على ترتيب تويوتا كوستر أو حافلة هايجر في جميع مناطق المملكة.",
       action: "contact",
       sections: [
+<<<<<<< HEAD
         { title: "بيانات التواصل", description: "تواصل مع شركة تارغت ترانسبورت في الرياض.", cards: [
           { title: "الهاتف", description: "0540328480\n0000000000 (رقم تجريبي)\n0000000001 (رقم تجريبي)", icon: "phone" },
           { title: "البريد الإلكتروني", description: "targettransportcompanyksa@gmail.com", icon: "mail" },
           { title: "موقع المكتب", description: "شركة تارغت ترانسبورت، مكتب رقم ٧٤، مركز الجفال التجاري، طريق الملك فهد الفرعي، حي عتيقة، الرياض، المملكة العربية السعودية", icon: "map-pin" },
+=======
+        { title: "بيانات التواصل", description: "تواصل مع شركة تارجت للنقل في الرياض.", cards: [
+          {
+            title: "الهاتف وواتساب",
+            description: "",
+            icon: "phone",
+            phoneContacts: [
+              { label: "الرئيس التنفيذي", number: "0540328480" },
+              { label: "للتواصل مع الشركة", number: "0564927110" },
+              { label: "استفسارات الموقع والتسويق", number: "0504828229" },
+            ],
+          },
+          { title: "البريد الإلكتروني", description: "", email: "targettransportcompanyksa@gmail.com", icon: "mail" },
+          { title: "موقع المكتب", description: "شركة تارجت ترانسبورت، مكتب رقم ٧٤، مركز الجفال التجاري، طريق الملك فهد الفرعي، حي عتيقة، الرياض، المملكة العربية السعودية", icon: "map-pin" },
+>>>>>>> temp-fix
         ] },
       ],
+      cta: {
+        title: "جاهزون لحجز رحلتكم؟",
+        description: "شاركوا موقع الانطلاق والوجهة وتاريخ الرحلة وعدد الركاب.",
+        label: "انتقلوا إلى نموذج الحجز",
+      },
     },
   },
 };

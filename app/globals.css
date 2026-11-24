@@ -460,6 +460,79 @@ html[data-theme="dark"] .brand-logo-theme .brand-logo-dark,
   white-space: pre-line;
 }
 
+<<<<<<< HEAD
+=======
+.contact-page .contact-phone-card h3 {
+  font-size: 15px;
+}
+
+.contact-page .contact-phone-card > p {
+  font-size: 12px;
+}
+
+.contact-phone-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.contact-phone-entry {
+  display: grid;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.contact-phone-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+}
+
+.contact-phone-number {
+  color: var(--blue);
+  font-weight: 600;
+  white-space: nowrap;
+  unicode-bidi: isolate;
+}
+
+.contact-phone-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.contact-action-button {
+  display: inline-flex;
+  min-height: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 7px;
+  border: 1px solid var(--blue);
+  border-radius: 15px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  transition: filter 160ms ease, transform 160ms ease;
+}
+
+.contact-action-button:hover {
+  filter: brightness(0.92);
+  transform: translateY(-1px);
+}
+
+.contact-action-button.whatsapp-action {
+  border-color: var(--green);
+  background: var(--green);
+}
+
+.contact-action-button.whatsapp-action:hover {
+  filter: brightness(0.92);
+}
+
+>>>>>>> temp-fix
 .contact-socials {
   margin-top: 30px;
 }
@@ -473,6 +546,64 @@ html[data-theme="dark"] .brand-logo-theme .brand-logo-dark,
   margin-top: 0;
 }
 
+<<<<<<< HEAD
+=======
+.contact-email-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact-email-link {
+  margin-top: 10px;
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.contact-email-link:hover {
+  color: var(--blue-deep);
+  text-decoration: underline;
+}
+
+.contact-booking-cta-section {
+  padding-top: clamp(24px, 4vw, 48px) !important;
+  padding-bottom: clamp(62px, 8vw, 104px) !important;
+}
+
+.contact-booking-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: clamp(24px, 4vw, 42px);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface-soft);
+  box-shadow: var(--shadow);
+}
+
+.contact-booking-cta h2 {
+  margin: 0;
+  font-size: clamp(22px, 3vw, 30px);
+}
+
+.contact-booking-cta p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.contact-booking-cta .button {
+  flex: 0 0 auto;
+}
+
+.contact-booking-cta[dir="rtl"] {
+  text-align: right;
+}
+
+>>>>>>> temp-fix
 .contact-location-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.4fr) minmax(0, 0.6fr);
@@ -1665,6 +1796,15 @@ html[data-theme="dark"] .service-card-grid .text-link:hover {
   .footer-inner,
   .footer-bottom {
     width: min(100% - 36px, 1160px);
+  }
+
+  .contact-booking-cta {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .contact-booking-cta .button {
+    width: 100%;
   }
 
   .brand-logo {
