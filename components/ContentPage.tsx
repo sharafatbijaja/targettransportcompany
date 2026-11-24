@@ -1,7 +1,9 @@
 import { ArrowUpRight, ChevronDown, Handshake } from "lucide-react";
+import Image from "next/image";
 import { IconCard } from "@/components/IconCard";
 import { InquiryForm } from "@/components/InquiryForm";
 import { PageIntro } from "@/components/PageIntro";
+import { SocialIcons } from "@/components/SocialIcons";
 import Link from "next/link";
 import { getCopy, type Locale, type PageKey } from "@/lib/content";
 
@@ -16,7 +18,7 @@ export function ContentPage({
   const page = copy.pages[pageKey];
 
   return (
-    <main className={pageKey === "booking" ? "booking-page" : undefined}>
+    <main className={pageKey === "booking" ? "booking-page" : pageKey === "contact" ? "contact-page" : undefined}>
       <PageIntro
         locale={locale}
         pageKey={pageKey}
@@ -42,6 +44,12 @@ export function ContentPage({
                 {section.cards.map((card) => (
                   <IconCard key={card.title} {...card} />
                 ))}
+              </div>
+            )}
+            {pageKey === "contact" && index === 0 && (
+              <div className="contact-socials">
+                <h3>{locale === "ar" ? "تابعونا" : "Follow us"}</h3>
+                <SocialIcons locale={locale} />
               </div>
             )}
           </div>
@@ -91,18 +99,20 @@ export function ContentPage({
       {pageKey === "contact" && (
         <section className="content-section">
           <div className="container">
-            <div
-              className="w-full overflow-hidden rounded-2xl border border-slate-200/80 shadow-sm mt-10"
-              dir={locale === "ar" ? "rtl" : "ltr"}
-            >
-              <div className="border-b border-slate-200/80 bg-white px-5 py-4 text-sm font-semibold text-slate-700 md:px-6">
-                {locale === "ar"
-                  ? "المقر الرئيسي: مركز الجفال التجاري، الرياض، المملكة العربية السعودية"
-                  : "Head Office: Al Jaffal Commercial Center, Riyadh, Saudi Arabia"}
+            <div className="contact-location-grid" dir={locale === "ar" ? "rtl" : "ltr"}>
+              <div className="contact-office-image">
+                <Image
+                  src="/images/target-transport-company.webp"
+                  alt={locale === "ar" ? "مكتب شركة تارغت ترانسبورت في الرياض" : "Target Transport Company office in Riyadh"}
+                  width={1140}
+                  height={878}
+                  sizes="(max-width: 800px) 100vw, 40vw"
+                  className="contact-office-image-content"
+                />
               </div>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1813.6486408534713!2d46.707128122269395!3d24.613436773206807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f057820bfe37b%3A0x3c010e6507acd828!2sAl%20Jaffal%20Commercial%20Center!5e0!3m2!1sen!2ssa!4v1795264855013!5m2!1sen!2ssa"
-                className="w-full h-[380px] md:h-[420px] border-0 block"
+                className="contact-location-map"
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="strict-origin-when-cross-origin"

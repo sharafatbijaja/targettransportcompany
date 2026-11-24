@@ -33,8 +33,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ? "تواصل مع شركة تارجت للنقل بالرياض | احجز تويوتا كوستر وحافلات هايجر"
       : "Contact Target Transport Company Riyadh | Book Toyota Coaster & Higer Bus";
     const contactDescription = locale === "ar"
-      ? "اطلب عرض سعر لتأجير الحافلات وتويوتا كوستر في الرياض وجميع مناطق المملكة. تفضل بزيارة مكتبنا في مركز الجفال التجاري بالرياض أو أرسل تفاصيل رحلتك."
-      : "Request a bus or Toyota Coaster quote in Riyadh & across KSA. Visit our office at Al Jaffal Commercial Center, Riyadh, or submit your route details online.";
+      ? "اطلب عرض سعر لتأجير الحافلات وتويوتا كوستر في الرياض وجميع مناطق المملكة. تفضل بزيارة مكتبنا في مركز الجفال التجاري بحي عتيقة بالرياض أو أرسل تفاصيل رحلتك."
+      : "Request a bus or Toyota Coaster quote in Riyadh & across KSA. Visit our office at Al-Jaffal Commercial Center in Utaiqah, Riyadh, or submit your route details online.";
     return {
       title: contactTitle,
       description: contactDescription,
@@ -281,7 +281,7 @@ async function PageContent({ params }: Props) {
         email: "info@targettransportcompany.sa",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "Al Jaffal Commercial Center",
+          streetAddress: "Office No. 74, Al-Jaffal Commercial Center, King Fahad Branch Road, Utaiqah",
           addressLocality: "Riyadh",
           addressRegion: "Riyadh Province",
           addressCountry: "SA",
@@ -307,7 +307,7 @@ async function PageContent({ params }: Props) {
       email: "info@targettransportcompany.sa",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "Al Jaffal Commercial Center",
+        streetAddress: "Office No. 74, Al-Jaffal Commercial Center, King Fahad Branch Road, Utaiqah",
         addressLocality: "Riyadh",
         addressRegion: "Riyadh Province",
         addressCountry: "SA",

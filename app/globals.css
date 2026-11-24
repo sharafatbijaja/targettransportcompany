@@ -443,6 +443,62 @@ html[data-theme="dark"] .brand-logo-theme .brand-logo-dark,
   background: var(--surface-soft);
 }
 
+.contact-page .page-intro,
+.contact-page .content-section {
+  background: var(--page);
+}
+
+.contact-page .content-section {
+  padding-block: calc(clamp(62px, 8vw, 104px) * 0.3);
+}
+
+.contact-page .card-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.contact-page .info-card p {
+  white-space: pre-line;
+}
+
+.contact-socials {
+  margin-top: 30px;
+}
+
+.contact-socials h3 {
+  margin: 0 0 12px;
+  font-size: 15px;
+}
+
+.contact-socials .footer-socials {
+  margin-top: 0;
+}
+
+.contact-location-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.4fr) minmax(0, 0.6fr);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.contact-office-image {
+  min-width: 0;
+}
+
+.contact-office-image-content {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.contact-location-map {
+  display: block;
+  width: 100%;
+  align-self: stretch;
+  border: 0;
+}
+
 .services-section {
   background: linear-gradient(125deg, var(--surface-soft), var(--page) 52%, var(--blue-soft));
 }
@@ -992,7 +1048,7 @@ html[data-theme="dark"] .closing-section,
 
 .page-intro {
   position: relative;
-  padding-block: 40px 60px;
+  padding-block: 30px 25px;
   background:
     radial-gradient(ellipse at 85% 12%, rgb(41 111 226 / 8%), transparent 35%),
     var(--surface);
@@ -1290,8 +1346,9 @@ html[data-theme="dark"] .service-card-grid .text-link:hover {
 
 .site-footer {
   padding-top: 58px;
-  background: #0e1c2f;
-  color: #e8eff9;
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
 }
 
 .footer-inner {
@@ -1310,8 +1367,45 @@ html[data-theme="dark"] .service-card-grid .text-link:hover {
 .footer-contact p {
   max-width: 310px;
   margin: 16px 0 0;
-  color: #9db0ca;
+  color: var(--muted);
   font-size: 13px;
+}
+
+.footer-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.footer-socials a {
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface-soft);
+  color: var(--ink);
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.footer-socials svg {
+  display: block;
+  width: 15px;
+  height: 15px;
+}
+
+.footer-socials a:hover {
+  transform: translateY(-2px);
+  border-color: var(--blue);
+  background: var(--blue);
+  color: #fff;
 }
 
 .footer-nav,
@@ -1326,17 +1420,17 @@ html[data-theme="dark"] .service-card-grid .text-link:hover {
 .footer-nav > strong,
 .footer-contact > strong {
   margin-bottom: 7px;
-  color: #fff;
+  color: var(--ink);
   font-size: 13px;
 }
 
 .footer-nav a {
-  color: #aebdd0;
+  color: var(--muted);
 }
 
 .footer-nav a:hover,
 .footer-contact a:hover {
-  color: #fff;
+  color: var(--blue);
 }
 
 .footer-contact p {
@@ -1347,7 +1441,7 @@ html[data-theme="dark"] .service-card-grid .text-link:hover {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  color: #b6ceff;
+  color: var(--blue);
   font-weight: 700;
 }
 
@@ -1357,9 +1451,29 @@ html[data-theme="dark"] .service-card-grid .text-link:hover {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  border-top: 1px solid rgb(255 255 255 / 13%);
-  color: #91a4bc;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
   font-size: 11px;
+}
+
+.footer-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.footer-credit svg {
+  color: #e25555;
+}
+
+.footer-credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-credit a:hover {
+  color: var(--blue);
 }
 
 .floating-actions {
@@ -1535,6 +1649,14 @@ html[data-theme="dark"] .service-card-grid .text-link:hover {
   .coverage-panel {
     grid-template-columns: 1fr;
   }
+
+  .contact-location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-location-map {
+    aspect-ratio: 1140 / 878;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1612,6 +1734,7 @@ html[data-theme="dark"] .service-card-grid .text-link:hover {
 
   .card-grid,
   .card-grid-three,
+  .contact-page .card-grid,
   .content-section .card-grid:not(.service-card-grid):has(.info-card:nth-child(4)) {
     grid-template-columns: 1fr;
   }

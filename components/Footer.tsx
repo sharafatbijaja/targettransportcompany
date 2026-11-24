@@ -1,18 +1,21 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Heart } from "lucide-react";
 import { BrandLogo } from "@/components/BrandLogo";
+import { SocialIcons } from "@/components/SocialIcons";
 import { getCopy, pageKeys, type Locale } from "@/lib/content";
 
 export function Footer({ locale }: { locale: Locale }) {
   const copy = getCopy(locale);
+
   return (
     <footer className="site-footer">
       <div className="footer-inner">
         <div className="footer-brand">
           <Link className="wordmark wordmark-footer" href={`/${locale}`} aria-label={copy.ui.brand}>
-            <BrandLogo variant="dark-surface" />
+            <BrandLogo />
           </Link>
           <p>{copy.ui.footerText}</p>
+          <SocialIcons locale={locale} />
         </div>
         <nav className="footer-nav" aria-label={locale === "ar" ? "روابط الموقع" : "Site links"}>
           <strong>{locale === "ar" ? "استكشف" : "Explore"}</strong>
@@ -31,7 +34,12 @@ export function Footer({ locale }: { locale: Locale }) {
       </div>
       <div className="footer-bottom">
         <span>© {copy.ui.brand}</span>
-        <span>{locale === "ar" ? "المعلومات قيد التحقق قبل النشر." : "Company details are published only when verified."}</span>
+        <span className="footer-credit">
+          {locale === "ar" ? "تم التطوير بـ" : "Made with"}
+          <Heart size={14} fill="currentColor" aria-label={locale === "ar" ? "حب" : "love"} />
+          {locale === "ar" ? "بواسطة" : "by"}
+          <a href="https://bijaja.vercel.app/" target="_blank" rel="noreferrer">Developer</a>
+        </span>
       </div>
     </footer>
   );
