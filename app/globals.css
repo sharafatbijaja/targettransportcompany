@@ -460,8 +460,6 @@ html[data-theme="dark"] .brand-logo-theme .brand-logo-dark,
   white-space: pre-line;
 }
 
-<<<<<<< HEAD
-=======
 .contact-page .contact-phone-card h3 {
   font-size: 15px;
 }
@@ -532,7 +530,6 @@ html[data-theme="dark"] .brand-logo-theme .brand-logo-dark,
   filter: brightness(0.92);
 }
 
->>>>>>> temp-fix
 .contact-socials {
   margin-top: 30px;
 }
@@ -546,8 +543,6 @@ html[data-theme="dark"] .brand-logo-theme .brand-logo-dark,
   margin-top: 0;
 }
 
-<<<<<<< HEAD
-=======
 .contact-email-card {
   display: flex;
   flex-direction: column;
@@ -603,7 +598,6 @@ html[data-theme="dark"] .brand-logo-theme .brand-logo-dark,
   text-align: right;
 }
 
->>>>>>> temp-fix
 .contact-location-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.4fr) minmax(0, 0.6fr);

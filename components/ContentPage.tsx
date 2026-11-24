@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { ArrowUpRight, ChevronDown, Handshake } from "lucide-react";
-=======
 import { ArrowUpRight, ChevronDown, Handshake, Mail, Phone } from "lucide-react";
->>>>>>> temp-fix
 import Image from "next/image";
 import { IconCard } from "@/components/IconCard";
 import { InquiryForm } from "@/components/InquiryForm";
