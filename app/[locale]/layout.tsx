@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { FloatingActions } from "@/components/FloatingActions";
 import { Footer } from "@/components/Footer";
+import { GoogleTagManager } from "@/components/GoogleTagManager";
 import { SiteHeader } from "@/components/SiteHeader";
 import { ThemeInitScript } from "@/components/ThemeInitScript";
 import { isLocale, locales } from "@/lib/content";
@@ -29,6 +30,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"} suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
+        <GoogleTagManager />
         <ThemeInitScript />
       </head>
       <body>

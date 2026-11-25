@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleTagManager } from "@/components/GoogleTagManager";
 import "../globals.css";
 
 export const metadata: Metadata = {
@@ -11,6 +12,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning data-scroll-behavior="smooth">
+      <head>
+        <GoogleTagManager />
+      </head>
       <body>{children}</body>
     </html>
   );
