@@ -26,6 +26,26 @@ export function ContentPage({
         heading={page.heading}
         intro={pageKey === "booking" ? "" : page.intro}
       />
+      {pageKey === "about" && page.profile && (
+        <section className="about-profile-section">
+          <div className="container about-profile-layout" dir="ltr">
+            <div className="about-profile-copy" dir={locale === "ar" ? "rtl" : "ltr"}>
+              <span className="section-eyebrow">{page.profile.eyebrow}</span>
+              <h2>{page.profile.name}</h2>
+              <p>{page.profile.description}</p>
+            </div>
+            <div className="about-profile-image">
+              <Image
+                src="/images/Waleed-Zaman.webp"
+                alt={page.profile.imageAlt}
+                width={228}
+                height={228}
+                sizes="228px"
+              />
+            </div>
+          </div>
+        </section>
+      )}
       {pageKey !== "booking" && page.sections.map((section, index) => (
         <section
           className={`content-section${index % 2 ? " section-muted" : ""}`}

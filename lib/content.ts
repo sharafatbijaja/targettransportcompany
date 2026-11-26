@@ -40,6 +40,7 @@ type PageContent = {
   eyebrow: string;
   heading: string;
   intro: string;
+  profile?: { eyebrow: string; name: string; description: string; imageAlt: string };
   action?: "booking" | "contact";
   sections: Section[];
   faqs?: FAQ[];
@@ -237,6 +238,12 @@ const en: Copy = {
       eyebrow: "About us",
       heading: "Transport planned around people and business.",
       intro: "Target Transport Company is a leading Riyadh-based fleet provider operating 500+ modern Toyota Coasters, Higer buses, and VIP vehicles across 9 major cities in Saudi Arabia.",
+      profile: {
+        eyebrow: "The values behind our service",
+        name: "Waleed Zaman",
+        description: "Waleed reflects the trust, respect, and commitment to service that guide Target Transport Company across Saudi Arabia.",
+        imageAlt: "Waleed Zaman",
+      },
       sections: [
         { eyebrow: "Our values", title: "Purpose, mission and vision", cards: [
           { title: "Our purpose", description: "Make it effortless for businesses and groups to plan safe, punctual bus journeys across Saudi Arabia with clear upfront details.", icon: "compass" },
@@ -502,6 +509,12 @@ const ar: Copy = {
       eyebrow: "من نحن",
       heading: "حلول نقل مصممة لخدمة الأفراد والأعمال.",
       intro: "شركة تارغت ترانسبورت هي مزود رائد لخدمات الأساطيل في الرياض، نمتلك أكثر من 500 حافلة هايجر وتويوتا كوستر ومركبات فاخرة تخدم 9 مدن رئيسية في المملكة.",
+      profile: {
+        eyebrow: "القيم التي توجه خدماتنا",
+        name: "وليد زمان",
+        description: "يجسد وليد زمان قيم الثقة والاحترام والالتزام بالخدمة التي توجه أعمال شركة تارجت ترانسبورت في أنحاء المملكة.",
+        imageAlt: "وليد زمان",
+      },
       sections: [
         { eyebrow: "قيمنا", title: "هدفنا ورسالتنا ورؤيتنا", cards: [
           { title: "هدفنا", description: "تسهيل تخطيط رحلات الحافلات الآمنة والمنتظمة للشركات والمجموعات في أنحاء المملكة بتفاصيل واضحة ومؤكدة مسبقاً.", icon: "compass" },
