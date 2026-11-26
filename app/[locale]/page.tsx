@@ -17,8 +17,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: copy.home.description,
     keywords: copy.home.keywords,
     alternates: {
-      canonical: path,
-      languages: { en: "/en", ar: "/ar", "x-default": "/en" },
+      canonical: new URL(path, siteUrl).toString(),
+      languages: {
+        en: new URL("/en", siteUrl).toString(),
+        ar: new URL("/ar", siteUrl).toString(),
+        "x-default": new URL("/en", siteUrl).toString(),
+      },
     },
     openGraph: {
       title: copy.home.title,

@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const page = getCopy(locale).pages[slug];
   const path = `/${locale}/${slug}`;
-  const canonical = path;
+  const canonical = new URL(path, siteUrl).toString();
 
   if (slug === "contact") {
     const contactTitle = locale === "ar"
@@ -42,9 +42,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       alternates: {
         canonical,
         languages: {
-          en: "/en/contact",
-          ar: "/ar/contact",
-          "x-default": "/en/contact",
+          en: new URL("/en/contact", siteUrl).toString(),
+          ar: new URL("/ar/contact", siteUrl).toString(),
+          "x-default": new URL("/en/contact", siteUrl).toString(),
         },
       },
       openGraph: {
@@ -67,9 +67,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       alternates: {
         canonical,
         languages: {
-          en: "/en/services",
-          ar: "/ar/services",
-          "x-default": "/en/services",
+          en: new URL("/en/services", siteUrl).toString(),
+          ar: new URL("/ar/services", siteUrl).toString(),
+          "x-default": new URL("/en/services", siteUrl).toString(),
         },
       },
       openGraph: {
@@ -91,9 +91,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: {
       canonical,
       languages: {
-        en: `/en/${slug}`,
-        ar: `/ar/${slug}`,
-        "x-default": `/en/${slug}`,
+        en: new URL(`/en/${slug}`, siteUrl).toString(),
+        ar: new URL(`/ar/${slug}`, siteUrl).toString(),
+        "x-default": new URL(`/en/${slug}`, siteUrl).toString(),
       },
     },
     openGraph: {
