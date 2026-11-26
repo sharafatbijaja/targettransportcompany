@@ -178,7 +178,7 @@ export function ContentPage({
             <div className="contact-location-grid" dir={locale === "ar" ? "rtl" : "ltr"}>
               <div className="contact-office-image">
                 <Image
-                  src="/images/target-transport-company.webp"
+                  src="/images/target-transport-company-office.webp"
                   alt={locale === "ar" ? "مكتب شركة تارغت ترانسبورت في الرياض" : "Target Transport Company office in Riyadh"}
                   width={1140}
                   height={878}
